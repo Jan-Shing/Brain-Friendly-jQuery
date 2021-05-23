@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #change_me {
+        position: absolute;
+        left: 400px;
+        font: 24px arial;    
+    }
+    #move_up #move_down #color #disappear{
+        padding: 5px;
+    }
+    #space{
+        display: inline-block;
+        width: 120px;
+    }
+    #others button{
+        margin-top: 40px;
+        margin-right: 80px;
+    }
+    </style>
+</head>
+<script src = "../library/jquery-3.5.1.js"></script>
+
+<body>
+    <div> 
+        <span id="space"> </span>
+        <span id="space">
+            <button id="move_up">Move Up</button>
+        </span>
+        <span id="space"> </span>
+    </div>
+    <div>
+        <span id="space"> 
+            <button id="move_left">Move left</button>
+        </span>
+        <span id="space">
+        </span>
+        <span id="space">
+            <button id="move_right">Move right</button>
+        </span>
+    </div>
+    <div>
+        <span id="space"></span>
+        <span id="space">
+            <button id="move_down">Move Down</button>
+        </span>
+        <span id="space"></span>
+    </div>
+    <div id="others">
+        <button id="color">Change Color</button>
+        <button id="disappear">Disappear/Re-appear</button>
+    </div>
+    <div id="change_me">Make Me Do Stuff!</div>
+    <script>
+        var randomArr=['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'];
+        $(document).ready(function(){
+            $("#move_up").click(function(){
+                $("#change_me").animate({top:30},2000);
+            });
+            $("#move_down").click(function(){
+                $("#change_me").animate({top:800}, 2000);
+            });
+            $("#move_left").click(function(){
+                $("#change_me").animate({left:30},2000);
+            });
+            $("#move_right").click(function(){
+                $("#change_me").animate({left:1000}, 2000);
+            });
+            $("#color").click(function(){
+                var colorStr = "#";
+                // 產生6位數色碼
+                for(var i=0;i<6;i++  ){
+                    colorStr += randomArr[Math.floor((Math.random() * 15) + 0)];
+                }
+                $("#change_me").css("color", colorStr);
+            });
+            $("#disappear").click(function(){
+                    $("#change_me").toggle("slow");
+            });
+        });
+    </script>
+</body>
+</html>
