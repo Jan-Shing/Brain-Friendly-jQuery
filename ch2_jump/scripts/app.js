@@ -22,6 +22,7 @@ function check_code(){
     }
 
     $(this).append(discount);
+    $(this).unbind('click');
 }
 
 $(document).ready(function(){
