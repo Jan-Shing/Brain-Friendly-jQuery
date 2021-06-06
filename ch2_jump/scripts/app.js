@@ -16,11 +16,11 @@ function gen_code(){
 function check_code(){
     var discount;
     if($.contains(this, document.getElementById("has_discount"))){
-        discount = "<p>Your Discount is " + (get_random(max_discount) +1) + "%</p>";
+        discount = "<p id='p-discount'>Your Discount is " + (get_random(max_discount) +1) + "%</p>";
     }else{
-        discount = "<p>Sorry, no discount this time QQ </p>";
+        discount = "<p id='p-discount'>Sorry, no discount this time QQ </p>";
     }
-
+   
     $(this).append(discount);
     $(this).unbind('click');
 }

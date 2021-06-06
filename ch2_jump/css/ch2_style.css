@@ -1,21 +1,42 @@
-div{
-    float: left;
-    height: 245px;
-    text-align: left;
-    border: solid #000 3px;
+.border-div {
+  float: left;
+  text-align: left;
+  border: solid #000 3px;
 }
 
-#header{
-    width: 100%;
-    border: 0px;
-    height: 50px;
+#header {
+  width: 100%;
+  border: 0px;
+  height: 50px;
 }
 
-#main{
-    background-color: rgba(216, 121, 121, 0.767);
-    height: 500px;
-    margin: auto;
+#main {
+  background-color: rgba(216, 121, 121, 0.767);
+  height: 500px;
+  margin: auto;
+  display: flex;
 }
-.my_hover{
-    border: solid#00f 5px;
+
+.click_box {
+  width: 207px;
+  height: 300px;
+  border: solid#000 3px;
+}
+
+.click_box img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.my_hover {
+
+  border: solid#00f 5px;
+}
+
+#p-discount {
+  color: green;
+  font-size: 16px;
+  word-break: break-all;
+
 }
